@@ -89,7 +89,7 @@ class Biblioteka:
                     mat = MaterialBiblioteczny.from_dict(item)
                     self.dodaj_material(mat)
         except FileNotFoundError:
-            pass  # Brak pliku – nie wczytujemy
+            pass  # Brak pliku
 
         try:
             with open(plik_czytelnicy, 'r', encoding='utf-8') as f:
