@@ -1,0 +1,42 @@
+[
+    {
+        "typ": "Ksiazka",
+        "tytul": "Wiedźmin: Ostatnie życzenie",
+        "autor": "Andrzej Sapkowski",
+        "rok": 1993,
+        "sygnatura": "SAP-WIE-01",
+        "wypozyczony": false,
+        "wypozyczony_przez": null,
+        "liczba_stron": 320
+    },
+    {
+        "typ": "Ksiazka",
+        "tytul": "Pan Tadeusz",
+        "autor": "Adam Mickiewicz",
+        "rok": 1834,
+        "sygnatura": "MIC-PAN-02",
+        "wypozyczony": false,
+        "wypozyczony_przez": null,
+        "liczba_stron": 400
+    },
+    {
+        "typ": "Czasopismo",
+        "tytul": "National Geographic",
+        "autor": "Redakcja",
+        "rok": 2023,
+        "sygnatura": "NAT-GEO-03",
+        "wypozyczony": false,
+        "wypozyczony_przez": null,
+        "numer_wydania": 234
+    },
+    {
+        "typ": "Multimedia",
+        "tytul": "Python dla każdego",
+        "autor": "Jan Kowalski",
+        "rok": 2022,
+        "sygnatura": "DVD-PYT-04",
+        "wypozyczony": false,
+        "wypozyczony_przez": null,
+        "czas_trwania": 120
+    }
+]

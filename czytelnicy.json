@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "imie": "Anna",
+        "nazwisko": "Nowak",
+        "wypozyczone_sygnatury": []
+    },
+    {
+        "id": 2,
+        "imie": "Piotr",
+        "nazwisko": "Wiśniewski",
+        "wypozyczone_sygnatury": []
+    }
+]
