@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row">
+    <div class="col-12 mb-4">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h3 class="mb-0">Materiały biblioteczne</h3>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover mb-0">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Typ</th>
+                                <th>Tytuł</th>
+                                <th>Autor</th>
+                                <th>Rok</th>
+                                <th>Sygnatura</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for m in materialy %}
+                            <tr>
+                                <td>{{ m.__class__.__name__ }}</td>
+                                <td>{{ m.tytul }}</td>
+                                <td>{{ m.autor }}</td>
+                                <td>{{ m.rok }}</td>
+                                <td><code>{{ m.sygnatura }}</code></td>
+                                <td>
+                                    {% if m.wypozyczony %}
+                                        <span class="badge bg-danger">wypożyczony (ID: {{ m.wypozyczony_przez }})</span>
+                                    {% else %}
+                                        <span class="badge bg-success">dostępny</span>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-secondary text-white">
+                <h3 class="mb-0">Czytelnicy</h3>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover mb-0">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Imię</th>
+                                <th>Nazwisko</th>
+                                <th>Wypożyczone materiały</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for c in czytelnicy %}
+                            <tr>
+                                <td>{{ c.id }}</td>
+                                <td>{{ c.imie }}</td>
+                                <td>{{ c.nazwisko }}</td>
+                                <td>
+                                    {% if c.wypozyczone_sygnatury %}
+                                        {{ c.wypozyczone_sygnatury | join(', ') }}
+                                    {% else %}
+                                        <em>brak</em>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

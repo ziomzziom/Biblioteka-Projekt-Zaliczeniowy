@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h3 class="mb-0">Zwróć materiał</h3>
+            </div>
+            <div class="card-body">
+                {% if materialy %}
+                <form method="POST">
+                    <div class="mb-3">
+                        <label for="sygnatura" class="form-label">Wypożyczony materiał (sygnatura)</label>
+                        <select class="form-select" name="sygnatura" id="sygnatura" required>
+                            <option value="">-- wybierz --</option>
+                            {% for m in materialy %}
+                            <option value="{{ m.sygnatura }}">
+                                {{ m.sygnatura }} – {{ m.tytul }} (wypożyczony przez ID {{ m.wypozyczony_przez }})
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-success">Zwróć</button>
+                    </div>
+                </form>
+                {% else %}
+                <p class="mb-0">Brak wypożyczonych materiałów.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
